@@ -32,6 +32,8 @@ abstract class SleepDatabase : RoomDatabase() {
 
         fun getInstance(context: Context): SleepDatabase {
             synchronized(this) {
+                // This is to take advantage of smart cast,
+                // which is only available to local variables.
                 var instance = INSTANCE
 
                 if (instance == null) {
