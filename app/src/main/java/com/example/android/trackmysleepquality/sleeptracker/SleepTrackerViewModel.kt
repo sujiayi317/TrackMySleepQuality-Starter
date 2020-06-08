@@ -34,7 +34,6 @@ class SleepTrackerViewModel(
         application: Application) : AndroidViewModel(application) {
 
     private var viewModelJob = Job()
-
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     private val nights = database.getAllNights()
